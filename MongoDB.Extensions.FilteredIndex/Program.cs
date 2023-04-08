@@ -55,3 +55,8 @@ var gteFilter = Builders<int>.Filter.ItemGte("elem", 90);
 content = gteFilter.Render(BsonSerializer.LookupSerializer<int>(), BsonSerializer.SerializerRegistry, LinqProvider.V3);
 
 Console.WriteLine(content);
+
+var x = Builders<Bar>.Filter.ItemEq("elem", x => x.MyProperty, 10);
+content = x.Render(BsonSerializer.LookupSerializer<Bar>(), BsonSerializer.SerializerRegistry, LinqProvider.V3);
+
+Console.WriteLine(content);
